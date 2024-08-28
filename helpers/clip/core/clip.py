@@ -712,7 +712,9 @@ def load_clip(
             f"Model {name} not found; available models = {available_models()}"
         )
 
-    model_path = _download(_MODELS[name])
+    #model_path = _download(_MODELS[name])
+    # facing URLError...
+    model_path = "/home/yangyuyin/peract_bimanual/clip_model/RN50.pt"
     model = torch.jit.load(model_path, map_location=device if jit else "cpu").eval()
     n_px = model.input_resolution.item()
 

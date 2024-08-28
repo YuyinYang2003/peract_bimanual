@@ -11,6 +11,7 @@ from yarr.agents.agent import (
     HistogramSummary,
     ImageSummary,
 )
+from pdb import set_trace
 
 
 class PreprocessAgent(Agent):
@@ -59,6 +60,7 @@ class PreprocessAgent(Agent):
                 observation[k] = self._norm_rgb_(v)
             else:
                 observation[k] = v.float()
+        #set_trace()
         act_res = self._pose_agent.act(step, observation, deterministic)
         act_res.replay_elements.update({"demo": False})
         return act_res

@@ -227,7 +227,9 @@ def create_obs_config(
     unused_cams.set_all(False)
     used_cams = CameraConfig(
         rgb=True,
-        point_cloud=True,
+        #try!
+        point_cloud=False,
+        #point_cloud=True,
         mask=False,
         depth=False,
         image_size=camera_resolution,
